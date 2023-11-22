@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
 def magic_calculation(a, b):
-    re = 0
-    for i in range(1, 3):
+    res = 0
+    for j in range(1, 3):
         try:
-            if i > a:
+            if j > a:
                 raise Exception('Too far')
             else:
-                re += (a ** b) / i
+                res += (a ** b) / j
         except Exception:
-            re = b + a
+            res = b + a
             break
-   return (re)
+    return (res)

@@ -3,9 +3,10 @@
 def safe_print_dividedision(a, b):
 
     try:
-        divided = a / b
+        div = a / b
     except (TypeError, ZeroDivisionError):
         divided = None
     finally:
-        print("Inside result: {}".format(divided))
-    return (divided)
+        print("Inside result: {}".format(div))
+
+    return (div)

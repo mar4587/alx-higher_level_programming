@@ -1,5 +1,4 @@
 #include <Python.h>
-
 void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
 void print_python_float(PyObject *p);
@@ -13,7 +12,7 @@ void print_python_float(PyObject *p);
 void print_python_list(PyObject *p)
 {
 	Py_ssize_t size, alloc, i;
-	const char *tp;
+	const char *type;
 	PyListObject *list = (PyListObject *)p;
 	PyVarObject *var = (PyVarObject *)p;
 
@@ -23,7 +22,7 @@ void print_python_list(PyObject *p)
 	fflush(stdout);
 
 	printf("[*] Python list info\n");
-	if (strcmp(p->ob_tp->tp_name, "list") != 0)
+	if (strcmp(p->ob_type->tp_name, "list") != 0)
 	{
 		printf("  [ERROR] Invalid List Object\n");
 		return;
@@ -34,19 +33,20 @@ void print_python_list(PyObject *p)
 
 	for (i = 0; i < size; i++)
 	{
-		tp = list->ob_item[i]->ob_tp->tp_name;
-		printf("Element %ld: %s\n", i, tp);
-		if (strcmp(tp, "bytes") == 0)
+		type = list->ob_item[i]->ob_type->tp_name;
+		printf("Element %ld: %s\n", i, type);
+		if (strcmp(type, "bytes") == 0)
 			print_python_bytes(list->ob_item[i]);
-		else if (strcmp(tp, "float") == 0)
+		else if (strcmp(type, "float") == 0)
 			print_python_float(list->ob_item[i]);
 	}
 }
 
 /**
- * print_python_bytes - Prints basic info about Python byte objects.
+ * print_python_bytes - Prints basic info about Python byte objects
  * @p: the object
  *
+ * Return: void
  */
 void print_python_bytes(PyObject *p)
 {
@@ -56,7 +56,7 @@ void print_python_bytes(PyObject *p)
 	fflush(stdout);
 
 	printf("[.] bytes object info\n");
-	if (strcmp(p->ob_tp->tp_name, "bytes") != 0)
+	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
@@ -82,8 +82,8 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
- * print_python_float - This function prints basic info about
- * Python float objects
+ * print_python_float - This function prints basic
+ * info about Python float objects.
  * @p: the float object
  *
  */
@@ -96,7 +96,7 @@ void print_python_float(PyObject *p)
 	fflush(stdout);
 
 	printf("[.] float object info\n");
-	if (strcmp(p->ob_tp->tp_name, "float") != 0)
+	if (strcmp(p->ob_type->tp_name, "float") != 0)
 	{
 		printf("  [ERROR] Invalid Float Object\n");
 		return;

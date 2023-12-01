@@ -1,10 +1,11 @@
 #include <Python.h>
 #include <stdio.h>
-
 /**
- * print_python_string - prints a python string in C
+ * print_python_string - This prints a python string in C
  *
- * @p: the PyUnicode Object
+ * @p: the PyUnicode object
+ *
+ * Return: void
  */
 
 void print_python_string(PyObject *p)

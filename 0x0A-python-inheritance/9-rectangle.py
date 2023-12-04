@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 """
 ===================================
-A module with class BaseGeometry
+module with class BaseGeometry
 ===================================
 """
 
 
 class Rectangle(BaseGeometry):
-    """A rectangle class that inherits
-    from BaseGeometry"""
+    """Rectangle class that inherits from BaseGeometry"""
 
     def __init__(self, width, height):
         """Method for initialized the attrubutes"""
@@ -20,8 +18,7 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
-        """Method to redefine a area method in the
-        parent class"""
+        """Method to redefine a area method in the parent class"""
 
         return self.__width * self.__height
 

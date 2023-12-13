@@ -69,7 +69,8 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """This sets/gets the y coordinate of the Rectangle"""
+        """This class sets/gets the y coordinate of
+        the Rectangle"""
         return self.__y
 
     @y.setter
@@ -97,7 +98,7 @@ class Rectangle(Base):
             print("")
 
     def update(self, *args, **kwargs):
-        """This updates the Rectangle
+        """This class updates the Rectangle
 
         Args:
             *args (ints): New attribute values.
@@ -143,7 +144,8 @@ class Rectangle(Base):
                     self.y = v
 
     def to_dictionary(self):
-        """This returns the dictionary representation of a
+        """This class returns the dictionary representation
+        of a
         Rectangle."""
         return {
             "id": self.id,
@@ -154,7 +156,8 @@ class Rectangle(Base):
         }
 
     def __str__(self):
-        """This returns the print() and str() representation
+        """This class returns the print() and str()
+        representation
         of the Rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,

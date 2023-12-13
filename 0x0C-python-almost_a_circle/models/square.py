@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-
-"""This Defines a square class."""
+"""This class defines a square
+class."""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """This represents a square"""
+    """This class represents a square"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """This initializes a new Square
+        """This class initializes a
+        new Square
 
         Args:
             size (int): size of the new Square.
@@ -20,7 +21,8 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """This gets/sets the size of the Square"""
+        """This class gets/sets the size of
+        the Square"""
         return self.width
 
     @size.setter
@@ -70,7 +72,8 @@ class Square(Rectangle):
                     self.y = v
 
     def to_dictionary(self):
-        """This returns the dictionary representation
+        """This class returns the dictionary
+        representation
         of the Square"""
         return {
             "id": self.id,
@@ -80,7 +83,7 @@ class Square(Rectangle):
         }
 
     def __str__(self):
-        """This returns the print() and str() representation
+        """This class returns the print() and str() representation
         of a Square."""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)

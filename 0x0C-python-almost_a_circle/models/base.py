@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """This function defines a base model class"""
 import json
 import csv
@@ -7,7 +6,7 @@ import turtle
 
 
 class Base:
-    """This function represents the base model
+    """This class represents the base model
 
     the "base" for all other classes in project 0x0C*.
 
@@ -89,7 +88,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """This returns a list of classes instantiated from a file
+        """This class returns a list of classes instantiated
+        from a file
         of JSON strings.
 
         Reads from `<cls.__name__>.json`.
@@ -108,7 +108,8 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """This writes the CSV serialization of a list of objects
+        """This class writes the CSV serialization of a
+        list of objects
         to a file.
 
         Args:
@@ -153,7 +154,8 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """This draws Rectangles and Squares using the turtle module
+        """This class draws Rectangles and Squares using
+        the turtle module
 
         Args:
             list_rectangles (list): A list of Rectangle objects to draw
